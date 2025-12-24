@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POMODORO 𖹭</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <!-- background  -->
+    <div class="radial-bg"></div>
+
+    <!-- audio  -->
+    <audio id="notificationSound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="rainSound" loop preload="auto">
+        <source src="./assets/audio/light_rain.wav" type="audio/wav">
+    </audio>
+
+    <!-- flying cat -->
+    <div id="flyingCat" class="flying-cat">
+        <dotlottie-wc src="https://lottie.host/e4995547-799f-4ba4-8fec-a81a46bced67/JvbDsF8HXe.lottie"
+            style="width: 500px;height: 500px" autoplay loop></dotlottie-wc>
+    </div>
+
+    <!-- watching kitty -->
+    <div class="watcher" id="watcher">
+        <p class="watcher-text">For your company...</p>
+        <dotlottie-wc src="https://lottie.host/cacf3336-21cd-498f-8632-98d56ee88312/OIfNAvb64F.lottie"
+            style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+    </div>
+
+    <header>
+        <!-- clock -->
+        <div id="time" class="clock-display"></div>
+
+        <!-- music toggle -->
+        <button class="rain-toggle" id="rainToggle">
+            ˚✮🎧✮˚
+        </button>
+    </header>
+
+    <main>
+        <div class="motivation" id="motivation">You're doing great, don't stop now!</div>
+
+        <!-- timer -->
+        <div class="timer-display">
+            <div class="time" id="minutes">25</div>
+            <div class="colon">:</div>
+            <div class="time" id="seconds">00</div>
+        </div>
+
+        <!-- control buttons -->
+        <div class="controls">
+            <button id="startBtn" class="start-btn">Start</button>
+            <button id="resetBtn" class="btn reset-btn">
+                <lord-icon class="reset" src="https://cdn.lordicon.com/ibckyoan.json" trigger="hover"
+                    colors="primary:#ffffff" style="width:40px;height:40px;">
+                </lord-icon>
+            </button>
+            <button id="settingsBtn" class="icon-btn btn">
+                <lord-icon src="https://cdn.lordicon.com/umuwriak.json" trigger="hover" colors="primary:#ffffff"
+                    style="width:40px;height:40px">
+                </lord-icon>
+            </button>
+        </div>
+
+        <!-- settings modal -->
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <h2>Settings</h2>
+                <div class="setting-group">
+                    <label for="workTime">Work time (minutes)</label>
+                    <input type="number" value="25" max="60" min="1" id="workTime">
+                </div>
+                <div class="setting-group">
+                    <label for="breakTime">Break time (minutes)</label>
+                    <input type="number" value="5" min="1" max="30" id="breakTime">
+                </div>
+                <div class="modal-buttons">
+                    <button class="save-btn" id="saveBtn">Save</button>
+                    <button class="cancel-btn" id="cancelBtn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./app.js"></script>
+
+
+</body>
+
+</html>

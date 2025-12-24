@@ -1,0 +1,36 @@
+{
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "description": "A cute aesthetic Pomodoro desktop app",
+  "main": "main.js",
+  "author": "Aayushi",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.aayushi.pomodoro",
+    "productName": "Pomodoro 𖹭",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "win": {
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "icon": "assets/icon.png"
+    }
+  }
+}
